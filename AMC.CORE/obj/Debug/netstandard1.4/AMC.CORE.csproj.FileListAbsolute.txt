@@ -1,0 +1,7 @@
+C:\Git\AMC\AMC.CORE\bin\Debug\netstandard1.4\AMC.CORE.deps.json
+C:\Git\AMC\AMC.CORE\bin\Debug\netstandard1.4\AMC.CORE.dll
+C:\Git\AMC\AMC.CORE\bin\Debug\netstandard1.4\AMC.CORE.pdb
+C:\Git\AMC\AMC.CORE\obj\Debug\netstandard1.4\AMC.CORE.AssemblyInfo.cs
+C:\Git\AMC\AMC.CORE\obj\Debug\netstandard1.4\AMC.CORE.dll
+C:\Git\AMC\AMC.CORE\obj\Debug\netstandard1.4\AMC.CORE.pdb
+C:\Git\AMC\AMC.CORE\obj\Debug\netstandard1.4\AMC.CORE.csprojResolveAssemblyReference.cache

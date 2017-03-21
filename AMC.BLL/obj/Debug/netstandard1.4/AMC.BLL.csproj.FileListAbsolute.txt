@@ -1,0 +1,11 @@
+C:\Git\AMC\AMC.BLL\bin\Debug\netstandard1.4\AMC.BLL.deps.json
+C:\Git\AMC\AMC.BLL\bin\Debug\netstandard1.4\AMC.BLL.dll
+C:\Git\AMC\AMC.BLL\bin\Debug\netstandard1.4\AMC.BLL.pdb
+C:\Git\AMC\AMC.BLL\bin\Debug\netstandard1.4\AMC.CORE.dll
+C:\Git\AMC\AMC.BLL\bin\Debug\netstandard1.4\AMC.DAL.dll
+C:\Git\AMC\AMC.BLL\bin\Debug\netstandard1.4\AMC.CORE.pdb
+C:\Git\AMC\AMC.BLL\bin\Debug\netstandard1.4\AMC.DAL.pdb
+C:\Git\AMC\AMC.BLL\obj\Debug\netstandard1.4\AMC.BLL.csprojResolveAssemblyReference.cache
+C:\Git\AMC\AMC.BLL\obj\Debug\netstandard1.4\AMC.BLL.AssemblyInfo.cs
+C:\Git\AMC\AMC.BLL\obj\Debug\netstandard1.4\AMC.BLL.dll
+C:\Git\AMC\AMC.BLL\obj\Debug\netstandard1.4\AMC.BLL.pdb

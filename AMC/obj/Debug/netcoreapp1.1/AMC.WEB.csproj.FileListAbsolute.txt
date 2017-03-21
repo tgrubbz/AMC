@@ -1,0 +1,15 @@
+C:\Git\AMC\AMC\bin\Debug\netcoreapp1.1\AMC.WEB.deps.json
+C:\Git\AMC\AMC\bin\Debug\netcoreapp1.1\AMC.WEB.runtimeconfig.json
+C:\Git\AMC\AMC\bin\Debug\netcoreapp1.1\AMC.WEB.runtimeconfig.dev.json
+C:\Git\AMC\AMC\bin\Debug\netcoreapp1.1\AMC.WEB.dll
+C:\Git\AMC\AMC\bin\Debug\netcoreapp1.1\AMC.WEB.pdb
+C:\Git\AMC\AMC\bin\Debug\netcoreapp1.1\AMC.BLL.dll
+C:\Git\AMC\AMC\bin\Debug\netcoreapp1.1\AMC.CORE.dll
+C:\Git\AMC\AMC\bin\Debug\netcoreapp1.1\AMC.DAL.dll
+C:\Git\AMC\AMC\bin\Debug\netcoreapp1.1\AMC.BLL.pdb
+C:\Git\AMC\AMC\bin\Debug\netcoreapp1.1\AMC.CORE.pdb
+C:\Git\AMC\AMC\bin\Debug\netcoreapp1.1\AMC.DAL.pdb
+C:\Git\AMC\AMC\obj\Debug\netcoreapp1.1\AMC.WEB.csprojResolveAssemblyReference.cache
+C:\Git\AMC\AMC\obj\Debug\netcoreapp1.1\AMC.WEB.AssemblyInfo.cs
+C:\Git\AMC\AMC\obj\Debug\netcoreapp1.1\AMC.WEB.dll
+C:\Git\AMC\AMC\obj\Debug\netcoreapp1.1\AMC.WEB.pdb
