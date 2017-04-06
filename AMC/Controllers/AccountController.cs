@@ -30,8 +30,7 @@ namespace AMC.WEB.Controllers
                 if (loginResult.Success)
                 {
                     await HttpContext.Authentication.SignInAsync("Cookies", loginResult.Principal);
-
-                    // TODO: redirect to (user role specific homepage)
+                    
                     return RedirectToAction("Index", "Home");
                 }
 
@@ -76,6 +75,12 @@ namespace AMC.WEB.Controllers
         {
             await HttpContext.Authentication.SignOutAsync("Cookies");
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
     }
 }

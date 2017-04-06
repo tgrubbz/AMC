@@ -1,9 +1,11 @@
 ﻿using AMC.BLL.Interfaces;
 using AMC.BLL.Models;
+using AMC.CORE.Enumerations;
 using AMC.CORE.Models;
 using AMC.DAL.Interfaces;
 using System.Collections.Generic;
 using System.Security.Claims;
+using System;
 
 namespace AMC.BLL.Managers
 {
@@ -21,6 +23,11 @@ namespace AMC.BLL.Managers
             return _userRepo.Create(new User() { Username = username });
         }
 
+        public TableResult<User> GetUsersTable()
+        {
+            return _userRepo.GetTable();
+        }
+
         public LoginResult Login(string username, string password)
         {
             LoginResult result = new LoginResult();
@@ -35,7 +42,8 @@ namespace AMC.BLL.Managers
                     {
                         List<Claim> claims = new List<Claim>
                         {
-                            new Claim("Username", user.Username)
+                            new Claim("Username", user.Username),
+                            new Claim("Role", user.Role.ToClaimString())
                         };
 
                         ClaimsIdentity identity = new ClaimsIdentity(claims, "password");

@@ -32,7 +32,8 @@
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js"></script>
+        <script src="~/js/AjaxHandlers.js"></script>
+        <script src="~/js/site.js?force=@(DateTime.Now.ToString())"></script>
     </environment>
     <environment names="Staging,Production">
         <!-- Use cdn links in production -->
@@ -44,8 +45,13 @@
                 asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
                 asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
         </script>
+        <script src="~/js/AjaxHandlers.js"></script>
         <script src="~/js/site.js"></script>
     </environment>
+    @if (IsSectionDefined("scripts"))
+    {
+        RenderSection("scripts");
+    }
 
 </body>
 </html>

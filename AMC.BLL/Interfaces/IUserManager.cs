@@ -11,5 +11,6 @@ namespace AMC.BLL.Interfaces
         int Create(string username);
         User Read(string username);
         int Update(User user);
+        TableResult<User> GetUsersTable();
     }
 }

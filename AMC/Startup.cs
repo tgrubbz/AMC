@@ -10,6 +10,8 @@ using Microsoft.Extensions.Logging;
 using AMC.BLL;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
+using AMC.WEB.Authorization;
+using Newtonsoft.Json.Serialization;
 
 namespace AMC
 {
@@ -32,7 +34,20 @@ namespace AMC
         {
             // Add framework services.
             services.AddBLL(Configuration["DefaultConnection:ConnectionString"]);
-            services.AddMvc();
+            services.AddMvc()
+                .AddJsonOptions(options =>
+                {
+                    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+                });
+
+            // Add Authorization services
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Client", policy => policy.AddRequirements(new ClientRequirement()));
+                options.AddPolicy("Contractor", policy => policy.AddRequirements(new ContractorRequirement()));
+                options.AddPolicy("Notary", policy => policy.AddRequirements(new NotaryRequirement()));
+                options.AddPolicy("Admin", policy => policy.AddRequirements(new AdminRequirement()));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
