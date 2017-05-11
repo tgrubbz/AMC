@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -34,11 +33,12 @@ namespace AMC
         {
             // Add framework services.
             services.AddBLL(Configuration["DefaultConnection:ConnectionString"]);
-            services.AddMvc()
-                .AddJsonOptions(options =>
-                {
-                    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
-                });
+            services.AddMvc();
+                //.AddJsonOptions(options =>
+                //{
+                //    // Use the default JSON serializer settings
+                //    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+                //});
 
             // Add Authorization services
             services.AddAuthorization(options =>

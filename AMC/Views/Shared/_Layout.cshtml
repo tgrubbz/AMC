@@ -5,7 +5,7 @@
 
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css?t=@DateTime.Now.ToString()" />
+        <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment names="Staging,Production">
         <!-- Use cdn links in production -->
@@ -25,15 +25,18 @@
         @Html.Partial("_Navbar")
     </div>
 
-    <div>
+    <div class="container">
         @RenderBody()
     </div>
 
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/DataTables/media/js/jquery.dataTables.js"></script>
+        <script src="~/lib/datatables/media/js/dataTables.bootstrap.js"></script>
+        <link rel="stylesheet" src="~/lib/DataTables/media/css/dataTables.bootstrap.css" />
         <script src="~/js/AjaxHandlers.js"></script>
-        <script src="~/js/site.js?force=@(DateTime.Now.ToString())"></script>
+        <script src="~/js/site.js"></script>
     </environment>
     <environment names="Staging,Production">
         <!-- Use cdn links in production -->
@@ -45,6 +48,9 @@
                 asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
                 asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
         </script>
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+        <link rel="stylesheet" src="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" />
         <script src="~/js/AjaxHandlers.js"></script>
         <script src="~/js/site.js"></script>
     </environment>

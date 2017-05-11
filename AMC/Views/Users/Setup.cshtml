@@ -1,0 +1,18 @@
+﻿@model SetupViewModel
+
+<h3>User Setup</h3>
+<h5>Set a newly registered user's role and give them access to the site.</h5>
+<hr />
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Username"></label>
+        <input asp-for="Username" class="form-control" value="@Model.Username" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="Role"></label>
+        <select asp-for="Role" asp-items="Model.RoleList" class="form-control"></select>
+        <span asp-validation-for="Role" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

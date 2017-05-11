@@ -35,3 +35,15 @@ textarea {
         display: none;
     }
 }
+
+.dataTables_filter, .dataTables_paginate {
+    text-align: right;
+}
+
+a {
+    cursor: pointer;
+}
+
+ul.pagination {
+    margin: 0px;
+}

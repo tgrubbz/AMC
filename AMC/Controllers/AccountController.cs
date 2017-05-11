@@ -29,19 +29,11 @@ namespace AMC.WEB.Controllers
                 LoginResult loginResult = _userManager.Login(model.Username, model.Password);
                 if (loginResult.Success)
                 {
-                    await HttpContext.Authentication.SignInAsync("Cookies", loginResult.Principal);
-                    
+                    await HttpContext.Authentication.SignInAsync("Cookies", loginResult.Principal);                    
                     return RedirectToAction("Index", "Home");
                 }
 
-                if (!loginResult.IsRegistered)
-                {
-                    ModelState.AddModelError("Username", "Username must be registered before logging in");
-                }
-                else
-                {
-                    ModelState.AddModelError("Username", "Invalid Login Atempt");
-                }
+                ModelState.AddModelError("Username", loginResult.Error);
             }
 
             return View(model);

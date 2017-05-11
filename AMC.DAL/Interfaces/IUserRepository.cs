@@ -5,9 +5,10 @@ namespace AMC.DAL.Interfaces
     public interface IUserRepository
     {
         int Create(User user);
-        TableResult<User> GetTable();
+        DataTableResult<User> GetTable(DataTableRequest request);
         User Read(string username);
+        User Read(int id);
         int Update(User user);
-        //int Delete(int id);
+        int Delete(int id);
     }
 }

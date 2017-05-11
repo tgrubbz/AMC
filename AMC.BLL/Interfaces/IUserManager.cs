@@ -1,4 +1,5 @@
 ﻿using AMC.BLL.Models;
+using AMC.CORE.Enumerations;
 using AMC.CORE.Models;
 
 namespace AMC.BLL.Interfaces
@@ -8,9 +9,11 @@ namespace AMC.BLL.Interfaces
         LoginResult Login(string username, string password);
         RegisterResult Register(string username, string password);
 
-        int Create(string username);
+        int Create(User user);
+        int Setup(User user);
         User Read(string username);
+        int Delete(int id);
         int Update(User user);
-        TableResult<User> GetUsersTable();
+        DataTableResult<User> GetUsersTable(DataTableRequest request);
     }
 }

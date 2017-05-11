@@ -10,6 +10,7 @@ namespace AMC.BLL
         public static IServiceCollection AddBLL(this IServiceCollection services, string connectionString)
         {
             services.AddScoped<IUserManager, UserManager>();
+            services.AddScoped<IInvoiceManager, InvoiceManager>();
             services.AddDAL(connectionString);
             return services;
         }

@@ -1,11 +1,13 @@
 ﻿using AMC.CORE.Enumerations;
 
-namespace AMC.WEB.ViewModels.User
+namespace AMC.WEB.ViewModels.Users
 {
-    public class UserViewModel
+    public class UsersViewModel
     {
         public string Username { get; set; }
         public UserRole Role { get; set; }
+        public bool IsRegistered { get; set; }
+        public bool IsSetup { get; set; }
 
         public string RoleName
         {
@@ -15,14 +17,16 @@ namespace AMC.WEB.ViewModels.User
             }
         }
 
-        public UserViewModel()
+        public UsersViewModel()
         {
         }
 
-        public UserViewModel(CORE.Models.User user)
+        public UsersViewModel(CORE.Models.User user)
         {
             Username = user.Username;
             Role = user.Role;
+            IsRegistered = user.IsRegistered;
+            IsSetup = user.IsSetup;
         }
     }
 }

@@ -1,0 +1,71 @@
+
+@section scripts{
+    <script>
+        $(function () {
+            $('#users-table').DataTable({
+                processing: true,
+                serverSide: true,
+                language: {
+                    infoFiltered: '',
+                    lengthMenu: 'Show _MENU_',
+                    search: 'Search '
+                },
+                ajax: function (data, callback, settings) {
+                    AjaxPost('/Users/GetTable', data, function (response) {
+                        callback({
+                            recordsTotal: response.length,
+                            recordsFiltered: response.length,
+                            data: response.items
+                        });
+                    });
+                },
+                columns: [
+                    {
+                        title: 'Name',
+                        data: 'username',
+                        render: function (data, type, row, meta) {
+                            return row['username'];
+                        }
+                    },
+                    {
+                        title: 'Role',
+                        data: 'roleName',
+                        render: function (data, type, row, meta) {
+                            return row['roleName'];
+                        }
+                    },
+                    {
+                        title: 'Edit',
+                        render: function (data, type, row, meta) {
+                            if (row['isSetup']) {
+                                return '<a><span class="glyphicon glyphicon-pencil"><span></a>';                                
+                            }
+                            return '<a href="/Users/Setup/' + row['username'] + '"><span class="glyphicon glyphicon-wrench"><span></a>';
+                        }
+                    },
+                    {
+                        title: 'Delete',
+                        render: function (data, type, row, meta) {
+                            return '<a class="toggle-delete-modal" data-username="' + row['username'] + '"><span class="glyphicon glyphicon-remove"><span></a>';
+                        }
+                    }
+                ]
+            });
+            
+            $('table').on('click', '.toggle-delete-modal', function () {
+                var username = $(this).data('username');
+                $('#delete-modal-container').load('/Users/Delete/' + username, function () {
+                    $('#delete-modal').modal();
+                });
+            });
+        });
+    </script>
+}
+
+<div class="container">
+    <h2>User Management</h2>
+    <hr />    
+    <table class="table" id="users-table"></table>
+</div>
+
+<div id="delete-modal-container"></div>
